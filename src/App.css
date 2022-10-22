@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navBar {
+    top: 0;
+    position: sticky;
+    z-index: 9;
+}
+
+#contenedorCartas {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    background-color: aqua;
+    margin-top: 2rem;
+    margin-left: auto;
+}
+
+#spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.card {
+    width: 19rem;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+img {
+    height: 224px;
+    width: 224px;
+}
+
+.card-img-top {
+    display: block;
+    margin: auto;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card-text {
+    text-align: left;
+}
+
+.envioFull {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+/* CARTA INDIVIDUAL */
+
+.containerIndiv {
+    margin-top: 90px;
+}
+
+.rowIndiv {}
+
+.imgIndv {
+    width: 368px;
+    height: 468px;
+}
+
+.card-bodyIndv {
+    padding: 15px;
+}
