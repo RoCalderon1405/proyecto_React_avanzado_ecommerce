@@ -4,19 +4,18 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.navBar {
+* {
+    box-sizing: border-box;
+ }
+
+.navBar-header {
     top: 0;
     position: sticky;
     z-index: 9;
 }
-
-#contenedorCartas {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 10px;
-    background-color: aqua;
-    margin-top: 2rem;
-    margin-left: auto;
+.navbar {
+    
+    background-color: rgb(149, 109, 212);
 }
 
 .containerSpinner {
@@ -32,6 +31,21 @@ body {
     height: 100%;
 }
 
+/* Contenedor de cartas */
+
+#contenedorCartas {
+    width: 80vw;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    background-color: aqua;
+    margin-top: 2rem;
+    box-shadow: 0px 3px 5px rgba(15, 15, 15, 0.5);
+
+}
+
+
 .card {
     width: 19rem;
     margin: auto;
@@ -44,9 +58,15 @@ img {
     width: 224px;
 }
 
+.containerImg {
+    display: flex;
+    justify-content: center;
+}
+
 .card-img-top {
-    display: block;
-    margin: auto;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 3px 5px rgba(15, 15, 15, 0.5);
 }
 
 .card-title {
@@ -72,6 +92,8 @@ img {
     min-width: 900px;
     padding: 0;
     background-color: rgba(255, 255, 255);
+    box-shadow: 0px 3px 5px rgba(15, 15, 15, 0.5);
+
 }
 
 .rowIndiv {
@@ -112,13 +134,12 @@ img {
 }
 
 .bttns__back-compra {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-right: 30px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     gap: 2rem;
 }
-.bttn-compra {
-    justify-content: end;
-}
+
+/* RESPONSIVE */

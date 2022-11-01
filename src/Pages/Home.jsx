@@ -4,6 +4,7 @@ import { Cartas } from './Cartas';
 import { NavBar } from './NavBar';
 import { ReactComponent as Spinner } from "../Assets/Spinner.svg";
 
+
 export const Home = ({ searcher }) => {
 
   const [items, setItems] = useState([])
@@ -53,49 +54,52 @@ export const Home = ({ searcher }) => {
 
       <NavBar filter={filter} />
 
-      {loading ?
+      {
+        loading ?
 
-        <div className='containerSpinner'>
-          <div id='spinner'> <Spinner /></div>
-          <div> <h2>Cargando...</h2> </div>
-        </div>
+          <div className='containerSpinner'>
+            <div id='spinner'> <Spinner /></div>
+            <div> <h2>Cargando...</h2> </div>
+          </div>
 
-        :
+          :
 
-        <div className="container-fluid" id='contenedorCartas'>
-          {
+          <div className="container-fluid " id='contenedorCartas'>
+            {
 
-            !filterItem ?
+              !filterItem ?
 
-              items.map((el) => (
-                <Cartas
-                  key={el._id}
-                  id={el._id}
-                  image={el.image}
-                  product_name={el.product_name}
-                  description={el.description}
-                  price={el.price}
-                  category={el.category}
-                  brand={el.brand}
-                />
-              ))
-              :
-              results.map((el) => (
-                <Cartas
-                  key={el._id}
-                  id={el._id}
-                  image={el.image}
-                  product_name={el.product_name}
-                  description={el.description}
-                  price={el.price}
-                  category={el.category}
-                  brand={el.brand}
-                />
-              ))
+                items.map((el) => (
+                  <Cartas
+                    key={el._id}
+                    id={el._id}
+                    image={el.image}
+                    product_name={el.product_name}
+                    description={el.description}
+                    price={el.price}
+                    category={el.category}
+                    brand={el.brand}
+                  />
+                ))
 
-          }
+                :
+                
+                results.map((el) => (
+                  <Cartas
+                    key={el._id}
+                    id={el._id}
+                    image={el.image}
+                    product_name={el.product_name}
+                    description={el.description}
+                    price={el.price}
+                    category={el.category}
+                    brand={el.brand}
+                  />
+                ))
 
-        </div>
+            }
+
+          </div>
       }
 
     </>

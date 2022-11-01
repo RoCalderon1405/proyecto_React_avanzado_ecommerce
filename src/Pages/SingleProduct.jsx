@@ -52,7 +52,7 @@ export const SingleProduct = () => {
 
                     <div className="container mb-3 containerIndiv">
                         <div className="row g-2 rowIndiv ">
-                            <div className='col-6 '>
+                            <div className='col-6 containerImg'>
                                 <img src={product.image} className="card-img-top imgIndv" alt="..." />
                             </div>
                             <div className="card-body col-6 card-bodyIndv">

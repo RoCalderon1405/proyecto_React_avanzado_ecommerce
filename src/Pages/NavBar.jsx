@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 export const NavBar = ({ filter }) => {
 
     let initialSearch = ""
@@ -17,10 +18,10 @@ export const NavBar = ({ filter }) => {
 
     return (
         <>
-            <div className="navBar">
-                <nav className="navbar bg-light">
+            <div className="navBar-header">
+                <nav className="navbar">
                     <div className="container-fluid">
-                        <div className="navbar-brand">E-commerce</div>
+                        <div className="navbar-brand"><b>E-commerce</b></div>
                         <form className="d-flex" role="search">
                             <input
                                 className="form-control me-2"

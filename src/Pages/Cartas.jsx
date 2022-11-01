@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 export const Cartas = ({ id, image, product_name, price }) => {
   return (
     <>
-      <div> 
-        <Link to={`/${id}`} className="card " >
+      <div className='cartas'> 
+        <Link to={`/${id}`} className="card row d-flex justify-content-between" >
           <img
             src={image}
             className="card-img-top d-flex justify-content-center "
