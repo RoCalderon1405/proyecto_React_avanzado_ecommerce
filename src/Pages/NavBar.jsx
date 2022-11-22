@@ -1,19 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { useSearchContext } from '../context/SearchContext'
+import '../App.css'
+import { useContext } from 'react'
+import { AuthContext } from '../context/AuthContext'
 
 
-export const NavBar = ({ filter }) => {
+export const NavBar = () => {
 
-    let initialSearch = ""
+    const { isAuth, logout } = useContext(AuthContext)
+    const searchItemContext = useSearchContext()
 
-    const [search, setSearch] = useState(initialSearch)
-
-    const searcher = (e) => {
-        setSearch(e.target.value)
-        filter(search)
+    const handleInputChange = (e) => {
+        searchItemContext.setSearch(e.target.value)
     }
 
     const handleClean = () => {
-        setSearch("")
+        searchItemContext.setSearch("")
     }
 
     return (
@@ -29,8 +32,8 @@ export const NavBar = ({ filter }) => {
                                 type="input"
                                 placeholder="Search"
                                 name="item"
-                                value={search}
-                                onChange={searcher}
+                                value={searchItemContext.search}
+                                onChange={handleInputChange}
                             />
                             <button
                                 className="btn btn-outline-success"
@@ -41,6 +44,27 @@ export const NavBar = ({ filter }) => {
                         </form>
                     </div>
                 </nav>
+                {
+                    !isAuth ?
+
+                        <ul id='header__nav-list'>
+                            <ul className='header__item-list'>
+                                <Link to='/signup' className='header__item-link'>Crea tu cuenta</Link>
+                            </ul>
+                            <ul className='header__item-list'>
+                                <Link to='/login' className='header__item-link'>Ingresa</Link>
+                            </ul>
+                        </ul>
+
+                        :
+
+                        <ul id='header__nav-list'>
+                            <ul className='header__item-list'>
+                                <Link to='/' className='header__item-link' onClick={logout}>Cerrar sesión</Link>
+                            </ul>
+                        </ul>
+
+                }
             </div>
         </>
     )

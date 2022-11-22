@@ -11,9 +11,7 @@ export const SingleProduct = () => {
     const { productId } = useParams()
     const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(false)
-
-
-
+    
 
     const getSimpleProduct = async () => {
         try {
@@ -30,7 +28,7 @@ export const SingleProduct = () => {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false)
-        }, 1500)
+        }, 1200)
 
         getSimpleProduct()
     }, [])

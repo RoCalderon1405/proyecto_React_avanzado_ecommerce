@@ -1,61 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { consumoApi } from '../API/consumoApi';
+import React from 'react';
 import { Cartas } from './Cartas';
-import { NavBar } from './NavBar';
 import { ReactComponent as Spinner } from "../Assets/Spinner.svg";
+import { useSearchContext } from '../context/SearchContext';
 
 
-export const Home = ({ searcher }) => {
+export const Home = () => {
+  const searchItemContext = useSearchContext()
 
-  const [items, setItems] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [results, setResults] = useState([])
-  const [filterItem, setfilterItem] = useState("")
+  // let arrayFilter = []
 
-  const getProductos = async () => {
-    setLoading(true)
-    const res = await consumoApi.get("/api/v1/item");
-    setItems(res.data)
-  };
-
-
-
-  const filter = (searcher) => {
-    let arrayFilter = []
-    console.log(searcher)
-    setfilterItem(searcher)
-
-    if (!searcher) {
-      arrayFilter = items
-    } else {
-      arrayFilter = items.filter((producto) =>
-        producto.product_name.toLowerCase().includes(searcher.toLocaleLowerCase()))
-      // console.log(results)
-      setResults(arrayFilter)
-    }
-  }
-
-  console.log(filterItem)
-  console.log(results)
-
-
-  useEffect(() => {
-
-    setTimeout(() => {
-      setLoading(false)
-    }, 1500)
-    getProductos()
-
-  }, [])
+  // if (!searchItemContext.search) {
+  //   console.log(searchItemContext.search)
+  //   arrayFilter = searchItemContext.items
+  // } else {
+  //   arrayFilter = searchItemContext.items.filter((producto) =>
+  //     producto.product_name.toLowerCase().includes(searchItemContext.search.toLocaleLowerCase()))
+  //   searchItemContext.setResults(arrayFilter)
+  //   console.log(searchItemContext.results)
+  // }
 
 
   return (
     <>
 
-      <NavBar filter={filter} />
-
       {
-        loading ?
+        searchItemContext.loading ?
 
           <div className='containerSpinner'>
             <div id='spinner'> <Spinner /></div>
@@ -66,36 +35,25 @@ export const Home = ({ searcher }) => {
 
           <div className="container-fluid " id='contenedorCartas'>
             {
-
-              !filterItem ?
-
-                items.map((el) => (
-                  <Cartas
-                    key={el._id}
-                    id={el._id}
-                    image={el.image}
-                    product_name={el.product_name}
-                    description={el.description}
-                    price={el.price}
-                    category={el.category}
-                    brand={el.brand}
-                  />
-                ))
-
-                :
-                
-                results.map((el) => (
-                  <Cartas
-                    key={el._id}
-                    id={el._id}
-                    image={el.image}
-                    product_name={el.product_name}
-                    description={el.description}
-                    price={el.price}
-                    category={el.category}
-                    brand={el.brand}
-                  />
-                ))
+              searchItemContext.items.filter((el) => {
+                if (searchItemContext.search === '') {
+                  return searchItemContext.items
+                } else if (el.product_name.toLowerCase().includes(searchItemContext.search.toLowerCase())) {
+                  return searchItemContext.items
+                }
+                return null
+              }).map((el) => (
+              <Cartas
+                key={el._id}
+                id={el._id}
+                image={el.image}
+                product_name={el.product_name}
+                description={el.description}
+                price={el.price}
+                category={el.category}
+                brand={el.brand}
+              />
+              ))
 
             }
 

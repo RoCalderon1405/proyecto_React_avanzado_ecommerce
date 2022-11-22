@@ -8,14 +8,35 @@ body {
     box-sizing: border-box;
  }
 
+/* NAVBAR */
+
 .navBar-header {
     top: 0;
     position: sticky;
     z-index: 9;
-}
-.navbar {
-    
     background-color: rgb(149, 109, 212);
+}
+
+
+#header__nav-list {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 70px;
+}
+
+.header__item-list {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+}
+
+.header__item-link {
+    display: flex;
+    color: black;
+    text-decoration: none;
+    margin: 5px;
+    text-align: center;
+    justify-content: center;
 }
 
 .containerSpinner {
@@ -36,13 +57,13 @@ body {
 #contenedorCartas {
     width: 80vw;
     max-width: 1400px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
     background-color: aqua;
     margin-top: 2rem;
     box-shadow: 0px 3px 5px rgba(15, 15, 15, 0.5);
-
 }
 
 
@@ -50,6 +71,9 @@ body {
     width: 19rem;
     margin: auto;
     margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0px 3px 5px rgba(15, 15, 15, 0.5);
 }
 
 
@@ -60,7 +84,7 @@ img {
 
 .containerImg {
     display: flex;
-    justify-content: center;
+    justify-content: center; 
 }
 
 .card-img-top {
@@ -69,19 +93,28 @@ img {
     box-shadow: 0px 3px 5px rgba(15, 15, 15, 0.5);
 }
 
+
+
+/* Img individual */
+
 .card-title {
     text-align: center;
+    text-decoration: none;
 }
 
-.card-text {
+.card-texto {
     text-align: left;
+    text-decoration: none;
 }
 
 .envioFull {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     gap: 10px;
+}
+
+#full{
+    text-decoration: none;
+
 }
 
 

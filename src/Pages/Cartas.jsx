@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 export const Cartas = ({ id, image, product_name, price }) => {
   return (
     <>
@@ -12,14 +13,14 @@ export const Cartas = ({ id, image, product_name, price }) => {
             alt="..." />
           <div className="card-body">
             <h5 className="card-title">{product_name}</h5>
-            <p className="card-text">{`$ ${price}.00`}</p>
+            <p className="card-texto">{`$ ${price}.00`}</p>
           </div>
           <div className="card-body envioFull">
             <div id='envio'>
               <p>Envío gratis</p>
             </div>
-            <div id='full'>
-              <p>✅ FULL</p>
+            <div>
+              <p id='full'>✅ FULL</p>
             </div>
           </div>
         </Link>
