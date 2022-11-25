@@ -3,6 +3,7 @@ import logo from '../Assets/logo.svg'
 import useForm from '../Hook/useForm'
 import { useNavigate } from 'react-router-dom'
 import { registerUserServices } from '../Services/userServices'
+import { Link } from 'react-router-dom'
 import '../Assets/CSS/form.css'
 
 const Signup = () => {
@@ -14,6 +15,8 @@ const Signup = () => {
       const result = await registerUserServices(data)
       if (result.status === 200) {
         navigate('/login')
+      } else {
+        
       }
     } catch (err) {
       console.log('Ocurrió un error en Signup: ' + err.message)
@@ -105,6 +108,7 @@ const Signup = () => {
           </div>
 
           <button className='w-100 btn btn-lg btn-primary' type='submit'>Sign Up</button>
+          <p>Ya tienes una cuenta? <Link to='/login'>Inicia sesión aquí</Link></p>
           <p className='mt-5 mb-3 text-muted'>© 2017–2022</p>
         </form>
       </main>

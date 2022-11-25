@@ -13,9 +13,11 @@ import axios from "axios";
  const registerUserServices = (data) => axios.post(`${BASE_URL}/signup`, data)
  const loginUserServices = (data) => axios.post(`${BASE_URL}/login`, data)
  const getSingleUser = (id) => axios.get(`${BASE_URL}/user/${id}`, config)
+ const postProduct = (data) => axios.post(`${BASE_URL}/item`, data)
 
  export {
     registerUserServices,
     loginUserServices,
-    getSingleUser
+    getSingleUser,
+    postProduct
  }

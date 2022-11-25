@@ -7,19 +7,6 @@ import { useSearchContext } from '../context/SearchContext';
 export const Home = () => {
   const searchItemContext = useSearchContext()
 
-  // let arrayFilter = []
-
-  // if (!searchItemContext.search) {
-  //   console.log(searchItemContext.search)
-  //   arrayFilter = searchItemContext.items
-  // } else {
-  //   arrayFilter = searchItemContext.items.filter((producto) =>
-  //     producto.product_name.toLowerCase().includes(searchItemContext.search.toLocaleLowerCase()))
-  //   searchItemContext.setResults(arrayFilter)
-  //   console.log(searchItemContext.results)
-  // }
-
-
   return (
     <>
 
@@ -43,16 +30,16 @@ export const Home = () => {
                 }
                 return null
               }).map((el) => (
-              <Cartas
-                key={el._id}
-                id={el._id}
-                image={el.image}
-                product_name={el.product_name}
-                description={el.description}
-                price={el.price}
-                category={el.category}
-                brand={el.brand}
-              />
+                <Cartas
+                  key={el._id}
+                  id={el._id}
+                  image={el.image}
+                  product_name={el.product_name}
+                  description={el.description}
+                  price={el.price}
+                  category={el.category}
+                  brand={el.brand}
+                />
               ))
 
             }

@@ -1,12 +1,12 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 * {
     box-sizing: border-box;
- }
+}
 
 /* NAVBAR */
 
@@ -14,36 +14,63 @@ body {
     top: 0;
     position: sticky;
     z-index: 9;
-    background-color: rgb(149, 109, 212);
+    background-color: rgba(25, 17, 105, 0.753);
+    color: white !important;
 }
 
+.navbar-brand{
+    color: white;
+}
 
 #header__nav-list {
     display: flex;
     justify-content: flex-end;
-    margin-right: 70px;
+    margin: 0;
+    padding: 0;
+}
+
+.header__items-all {
+    display: flex;
+    width: 80vw;
+    max-width: 1400px;
+    justify-content: space-between;
+    padding: 0;
+
+
+}
+
+#header__items-allLogout {
+    justify-content: flex-end;
 }
 
 .header__item-list {
     display: flex;
     justify-content: center;
     padding: 8px;
+    font-size: x-small;
 }
 
 .header__item-link {
     display: flex;
-    color: black;
+    color: white;
     text-decoration: none;
     margin: 5px;
     text-align: center;
     justify-content: center;
+    align-items: center;
+}
+
+.header__nav-bienvenidauser {
+    margin: 0;
+    font-size: medium;
 }
 
 .containerSpinner {
-     display: block;
-     text-align: center;
-     margin-top: 5rem;
+    display: block;
+    text-align: center;
+    margin-top: 5rem;
 }
+
 
 #spinner {
     display: flex;
@@ -61,14 +88,18 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    background-color: aqua;
+    background-color: rgba(0, 0, 0, 0.3);
     margin-top: 2rem;
+    margin-bottom: 2rem;
     box-shadow: 0px 3px 5px rgba(15, 15, 15, 0.5);
 }
 
-
+.cartas {
+    width: auto;
+    height: auto;
+}
 .card {
-    width: 19rem;
+    width: auto;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -77,20 +108,30 @@ body {
 }
 
 
-img {
+.card-img-top {
     height: 224px;
     width: 224px;
 }
 
 .containerImg {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .card-img-top {
-    width: 100%;
     border-radius: 15px;
     box-shadow: 0px 3px 5px rgba(15, 15, 15, 0.5);
+}
+
+.card-body{
+    padding: 8px;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 
@@ -112,7 +153,7 @@ img {
     gap: 10px;
 }
 
-#full{
+#full {
     text-decoration: none;
 
 }
@@ -122,9 +163,10 @@ img {
 
 .containerIndiv {
     margin-top: 90px;
-    min-width: 900px;
+    width: 80%;
+    max-width: 1200px;
     padding: 0;
-    background-color: rgba(255, 255, 255);
+    background-color: rgb(255, 255, 255, 0.8);
     box-shadow: 0px 3px 5px rgba(15, 15, 15, 0.5);
 
 }
@@ -132,7 +174,7 @@ img {
 .rowIndiv {
     padding: 40px 3rem;
     padding-top: 40px;
-    
+
 }
 
 .imgIndv {
@@ -175,4 +217,223 @@ img {
     gap: 2rem;
 }
 
-/* RESPONSIVE */
+/* CARRITO DE COMPRAS */
+
+#contenedorTabla {
+    width: 80%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255, 0.8);
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    box-shadow: 0px 3px 5px rgba(15, 15, 15, 0.5);
+}
+
+.containderItemsTabla {
+    width: 90%;
+}
+
+.table {
+    margin: 10px;
+    padding: 0;
+}
+
+.table__header-tittle {
+    text-align: center;
+}
+
+.table__body-header {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr 1fr 1fr;
+}
+
+.table__body_items {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr 1fr 1fr;
+}
+
+.table__header-item {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.table__body-image {
+    display: flex;
+    justify-content: center;
+}
+
+.table__body-productname {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="number"] {
+    border: thin solid #0d0d0d;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    outline: none;
+    display: block;
+    width: 65%;
+    font-size: 1rem;
+    line-height: 1;
+    background-color: aliceblue;
+}
+
+.teble__body-precio {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.table__body-inputborrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-tienda {
+    margin: 0;
+    padding: 0 0.3rem !important;
+}
+
+.text-carritovacio {
+    margin-top: 0.5rem;
+}
+
+.totalPay {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-borrar {
+    background-color: #dc3545 !important;
+}
+
+
+@media (max-width: 950px) {
+    body{
+        font-size: xx-small;
+    }
+
+    .navBar-header {
+        display: block;
+        position: relative
+    }
+
+    .header__items-all {
+        width: 100%;
+    }
+
+    .cartas {
+        display: flex;
+    }
+
+    .cartas {
+        display: flex;
+    }
+
+    .card-img-top{
+        display: flex;
+        height: 104px;
+        width: 104px;
+        padding: 16px;
+    }
+
+    .card-body {
+        font-size: x-small;
+        padding: 5px;
+    }
+    .containerIndiv {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        width: 100%;
+    }
+
+    .rowIndiv{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        padding-top: 25px;
+    }
+
+    .card-bodyIndv {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        padding: 0 16px;
+    }
+
+    .card-precio {
+        text-align: center;
+    }
+    
+    .imgIndv {
+        width: 288px;
+        height: 224px;
+        padding: 16;
+    }
+
+    .card-titleindv{
+        font-size: medium;
+    }
+
+    .containerImg {
+        width: 100%;
+    }
+
+    .card-titleindv {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .card-textindv {
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    .card-precioindv{
+        font-size: 32px;
+        font-weight: 300;
+    }
+
+    .card-categoryindv{
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    .card-brandindv{
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    .bttns__back-compra {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+    }
+
+    .btn-compra{
+        order: 1;
+    }
+
+    .bttn-back {
+        display: flex;
+        justify-content: center;
+        order: 2;
+    }
+
+    .btn--compra-link{
+        order: 1;
+        color: white;
+    }
+    
+}

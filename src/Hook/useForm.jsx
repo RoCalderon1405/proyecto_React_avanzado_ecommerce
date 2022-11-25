@@ -27,6 +27,7 @@ function useForm(callback, defaults) {
     const handleSubmit = (event) => {
         event.preventDefault() //Evita que se recargue la página y rompa el SPA
         callback(input)  //Esta es la función que se recibe por parámetro
+        console.log(input)
     }
     
     return {
