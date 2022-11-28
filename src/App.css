@@ -322,7 +322,10 @@ input[type="number"] {
 
     .navBar-header {
         display: block;
-        position: relative
+    }
+
+    .header__items-tittleInput {
+        justify-content: center !important;
     }
 
     .header__items-all {
