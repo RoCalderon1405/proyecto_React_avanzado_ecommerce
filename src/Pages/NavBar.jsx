@@ -47,7 +47,7 @@ export const NavBar = () => {
             <div className="navBar-header">
                 <nav className="navbar">
                     <div className="container-fluid header__items-tittleInput">
-                        <Link className="navbar-brand" to='/'><b>E-commerce</b></Link>
+                        <Link className="navbar-brand" to='/'><b>E-commerdfce</b></Link>
                         <form className="d-flex input" role="search">
                             <input
                                 className="form-control me-2"
