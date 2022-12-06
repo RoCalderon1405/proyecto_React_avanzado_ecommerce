@@ -70,7 +70,7 @@ const SingleProduct = () => {
                             <div className='bttns__back-compra'>
                                 <Link className='btn btn-danger bttn-back'> <div className="bttn--back-link" to={"/"} >BACK</div>
                                 </Link>
-                                <Link className='btn btn-success bttn-compra' to={'/buy'}onClick={addCarrito}>
+                                <Link className='btn btn-success bttn-compra' to={'/'}onClick={addCarrito}>
                                 <div className='bttn--compra-link' to='/'> <Carrito className='carrito' /> Agregar a Carrito </div>
                                 </Link>
                             </div>

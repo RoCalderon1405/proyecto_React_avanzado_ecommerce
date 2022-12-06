@@ -18,6 +18,11 @@ body {
     color: white !important;
 }
 
+.header__items-tittleInput {
+    max-width: 1400px;
+    width: 80vw;
+}
+
 .navbar-brand{
     color: white;
 }
@@ -265,6 +270,11 @@ body {
     justify-content: center;
 }
 
+.imgCarrito {
+    height: 224px;
+    width: 224px;
+}
+
 .table__body-productname {
     display: flex;
     justify-content: center;
@@ -329,7 +339,7 @@ input[type="number"] {
     }
 
     .header__items-all {
-        width: 100%;
+        width: 80vw;
     }
 
     .cartas {
@@ -437,6 +447,11 @@ input[type="number"] {
     .btn--compra-link{
         order: 1;
         color: white;
+    }
+
+    .imgCarrito {
+        height: 104px;
+        width: 104px;
     }
     
 }

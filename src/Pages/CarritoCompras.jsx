@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSearchContext } from '../context/SearchContext'
-import TableRow from '../componentes/TableRow'
+import TableRow from './TableRow'
 import { Link } from 'react-router-dom'
 
 
@@ -46,6 +46,7 @@ const CarritoCompras = () => {
                   }
                   <div className='totalPay'>
                     <h4> Total a pagar ${ }</h4>
+                    <Link className='text-center link-tienda' to='/'> Tienda </Link>
                   </div>
                 </>
             }

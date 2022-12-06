@@ -25,7 +25,7 @@ const TableRow = ({ id, image, product_name, price }) => {
         <>
             <div className='table__body_items'>
                 <div className='table__body-image'>
-                    <img src={image} alt="" />
+                    <img src={image} alt="" className='imgCarrito' />
                 </div>
 
                 <div className='table__body-productname'>
